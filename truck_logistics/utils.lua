@@ -71,6 +71,9 @@ function spawnVehicle(name,x,y,z,h,vehbody,vehengine,vehtransmission,vehwheels,b
 		SetVehicleBodyHealth(nveh,vehbody+0.0)
 		SetVehicleFuelLevel(nveh,100.0)
 		DecorSetFloat(nveh, "_FUEL_LEVEL", GetVehicleFuelLevel(nveh))
+		
+		local plate = GetVehicleNumberPlateText(nveh)
+		TriggerEvent("vehiclekeys:client:SetOwner", plate)
 	
 		blip = AddBlipForEntity(nveh)
 		SetBlipSprite(blip,blip_sprite)
