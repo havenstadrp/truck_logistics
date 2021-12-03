@@ -14,13 +14,7 @@ menuactive = false
 empresaAtual = nil
 loading = false
 cooldown = nil
-QBCore = nil
-CreateThread(function()
-    while QBCore == nil do
-        TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-        Wait(100)
-    end
-end)
+QBCore = exports['qb-core']:GetCoreObject()
 
 isLoggedIn = false
 PlayerJob = {}
