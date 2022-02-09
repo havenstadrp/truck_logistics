@@ -72,8 +72,7 @@ function spawnVehicle(name,x,y,z,h,vehbody,vehengine,vehtransmission,vehwheels,b
 		SetVehicleFuelLevel(nveh,100.0)
 		DecorSetFloat(nveh, "_FUEL_LEVEL", GetVehicleFuelLevel(nveh))
 		
-		local plate = GetVehicleNumberPlateText(nveh)
-		TriggerEvent("vehiclekeys:client:SetOwner", plate)
+		TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(nveh))
 	
 		blip = AddBlipForEntity(nveh)
 		SetBlipSprite(blip,blip_sprite)
