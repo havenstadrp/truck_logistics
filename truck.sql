@@ -14,14 +14,14 @@
 -- Dumping structure for table trucker_available_contracts
 CREATE TABLE IF NOT EXISTS `trucker_available_contracts` (
   `contract_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `contract_type` bit(1) NOT NULL DEFAULT b'0',
+  `contract_type` tinyint(3) NOT NULL DEFAULT b'0',
   `contract_name` varchar(50) NOT NULL DEFAULT '',
   `coords_index` smallint(6) unsigned NOT NULL DEFAULT 0,
   `price_per_km` int(10) unsigned NOT NULL DEFAULT 0,
   `cargo_type` tinyint(3) unsigned NOT NULL DEFAULT 0,
-  `fragile` bit(1) NOT NULL DEFAULT b'0',
-  `valuable` bit(1) NOT NULL DEFAULT b'0',
-  `fast` bit(1) NOT NULL DEFAULT b'0',
+  `fragile` tinyint(3) NOT NULL DEFAULT b'0',
+  `valuable` tinyint(3) NOT NULL DEFAULT b'0',
+  `fast` tinyint(3) NOT NULL DEFAULT b'0',
   `truck` varchar(50) DEFAULT NULL,
   `trailer` varchar(50) NOT NULL,
   PRIMARY KEY (`contract_id`) USING BTREE
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `trucker_users` (
   `valuable` tinyint(3) unsigned NOT NULL DEFAULT 0,
   `fragile` tinyint(3) unsigned NOT NULL DEFAULT 0,
   `fast` tinyint(3) unsigned NOT NULL DEFAULT 0,
-  `loan_notify` bit(1) NOT NULL DEFAULT b'0',
+  `loan_notify` tinyint(3) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`user_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
